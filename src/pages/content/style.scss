@@ -1,2 +1,16 @@
-// CSS that can pollute global styles. Use it with caution.
-// If you use ShodowRoot for style pollution, this style will not be applied inside the content script.
+// TODO parse selectors from bitbucket with a script?
+//    {
+//         loader: "sass-loader",
+//         options: {
+//           additionalData: "$bitbucketMain: " + parsedMainSelector + ";",
+//         },
+//       },
+$bitbucketMain: '.css-kyhvoj';
+$sidebarSelector: '.css-4rxc6l';
+
+#{$bitbucketMain} {
+  --color-main: #070f2b;
+  & #{$sidebarSelector} {
+    background-color: var(--color-main);
+  }
+}
