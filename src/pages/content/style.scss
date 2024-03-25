@@ -7,10 +7,58 @@
 //       },
 $bitbucketMain: '.css-kyhvoj';
 $sidebarSelector: '.css-4rxc6l';
+$sidebarTabSelector: '.css-1hpn4bw';
+$sidebarButtonOnHover: '.css-t3yiul';
+$sidebarButton: '.css-1t5na7c';
+$sidebarButtonText: '.css-1olrtn';
+$sidebarButtonTextHover: 'css-1h2b0g4';
 
 #{$bitbucketMain} {
-  --color-main: #070f2b;
   & #{$sidebarSelector} {
     background-color: var(--color-main);
   }
+
+  & #{$sidebarButton} {
+    background-color: var(--color-active-surface) !important;
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarButtonText} {
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarButtonOnHover}#{$sidebarButtonOnHover} {
+    background-color: var(--color-hover) !important;
+    color: var(--color-hover-text) !important;
+  }
+
+  & #{$sidebarButtonTextHover} {
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarTabSelector}::before {
+    background-color: var(--color-main);
+  }
+
+  // hide +- icons on diff display
+  .code-diff.syntax-highlighted.__rbb_syntax_highlight::before {
+    display: none;
+  }
+
+  pre.code-component {
+    background-color: var(--color-main);
+
+    & .token {
+      color: var(--color-code-text);
+    }
+  }
+}
+
+body:has(#{$bitbucketMain}) {
+  --color-main: #1d2125;
+  --color-active-surface: #1c2b41;
+  --color-active-surface-text-color: #9fadbc;
+  --color-hover: #09326c;
+  --color-hover-text: #579dff;
+  --color-code-text: #AAB1BEİ background-color: var(--color-main);
 }
