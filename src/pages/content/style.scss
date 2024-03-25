@@ -45,11 +45,21 @@ $sidebarButtonTextHover: 'css-1h2b0g4';
     display: none;
   }
 
+  .chunk-heading-wrapper.gutter-width-apply-padding-left,
+  .line-numbers.gutter-width-apply-width {
+    background-color: var(--color-main) !important;
+    color: #fff;
+  }
+
   pre.code-component {
     background-color: var(--color-main);
-
+    color: #62aeef;
     & .token {
-      color: var(--color-code-text);
+      color: var(--color-token);
+
+      &.function {
+        color: var(--color-token-function);
+      }
     }
   }
 }
@@ -60,5 +70,8 @@ body:has(#{$bitbucketMain}) {
   --color-active-surface-text-color: #9fadbc;
   --color-hover: #09326c;
   --color-hover-text: #579dff;
-  --color-code-text: #AAB1BEİ background-color: var(--color-main);
+  --color-token: #aab1be;
+  --color-token-function: #c678dd;
+
+  background-color: var(--color-main);
 }
