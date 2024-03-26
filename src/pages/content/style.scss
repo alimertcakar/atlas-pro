@@ -21,6 +21,8 @@ $searchInputActive: '.css-1e2ir0d';
 $searchInputHover: '.css-1pialsq';
 $commitRowActive: '.css-95a91x';
 $commitRow: '.css-199ngp7';
+$pipelinesResultPane: '.css-1t3ixu6';
+$pipelinesResultPaneTop: '.css-9inabr';
 
 #{$bitbucketMain} {
   & #{$sidebarSelector} {
@@ -149,6 +151,14 @@ $commitRow: '.css-199ngp7';
     & .mtk26 {
       color: var(--color-token-function) !important;
     }
+  }
+
+  & #{$pipelinesResultPane} {
+    background-color: var(--color-main) !important;
+  }
+
+  & #{$pipelinesResultPaneTop} {
+    background-color: var(--color-main) !important;
   }
 }
 
