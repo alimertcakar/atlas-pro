@@ -15,6 +15,7 @@ $sidebarButtonText: '.css-1olrtn';
 $sidebarButtonTextHover: '.css-1h2b0g4';
 $sidebarRepoName: '.css-ienhqj';
 $sidebarRepoNameHover: '.css-ibmu9r';
+$sidebarActiveIcon: '.css-1afrefi';
 
 #{$bitbucketMain} {
   & #{$sidebarSelector} {
@@ -27,7 +28,11 @@ $sidebarRepoNameHover: '.css-ibmu9r';
   }
 
   & #{$sidebarButtonText} {
-    color: var(--color-active-surface-text-color) !important;
+    color: var(--text-color) !important;
+  }
+
+  & #{$sidebarActiveIcon} {
+    color: var(--text-color) !important;
   }
 
   & #{$sidebarButtonOnHover}#{$sidebarButtonOnHover} {
@@ -55,11 +60,9 @@ $sidebarRepoNameHover: '.css-ibmu9r';
   }
 
   pre.code-component {
-    background-color: var(--color-main);
+    background-color: unset;
     color: #62aeef;
     & .token {
-      color: var(--color-token);
-
       &.function {
         color: var(--color-token-function);
       }
@@ -67,8 +70,8 @@ $sidebarRepoNameHover: '.css-ibmu9r';
   }
 
   div[data-testid='renderer-wrapper'] {
+    padding: 0.5rem;
     &:hover {
-      padding: 0.5rem;
       background-color: var(--color-main);
       border-radius: 15px;
       filter: brightness(85%);
@@ -76,16 +79,28 @@ $sidebarRepoNameHover: '.css-ibmu9r';
   }
 
   & #{$sidebarRepoName} {
-    filter: brightness(85%);
+    background-color: var(--color-main) !important;
+    & * {
+      color: #fff !important;
+    }
   }
 
   & #{$sidebarRepoNameHover} {
     filter: brightness(85%);
     background-color: var(--color-main) !important;
+    border-radius: 15px;
+    & * {
+      color: #fff !important;
+    }
+  }
+
+  & .show-more-lines-button {
+    background-color: var(--color-main) !important;
   }
 }
 
 body:has(#{$bitbucketMain}) {
+  --text-color: #fff;
   --color-main: #1d2125;
   --color-active-surface: #1c2b41;
   --color-active-surface-text-color: #9fadbc;
