@@ -1,3 +1,4 @@
+@use 'themes';
 // TODO parse selectors from bitbucket with a script?
 //    {
 //         loader: "sass-loader",
@@ -11,7 +12,9 @@ $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnHover: '.css-t3yiul';
 $sidebarButton: '.css-1t5na7c';
 $sidebarButtonText: '.css-1olrtn';
-$sidebarButtonTextHover: 'css-1h2b0g4';
+$sidebarButtonTextHover: '.css-1h2b0g4';
+$sidebarRepoName: '.css-ienhqj';
+$sidebarRepoNameHover: '.css-ibmu9r';
 
 #{$bitbucketMain} {
   & #{$sidebarSelector} {
@@ -62,6 +65,24 @@ $sidebarButtonTextHover: 'css-1h2b0g4';
       }
     }
   }
+
+  div[data-testid='renderer-wrapper'] {
+    &:hover {
+      padding: 0.5rem;
+      background-color: var(--color-main);
+      border-radius: 15px;
+      filter: brightness(85%);
+    }
+  }
+
+  & #{$sidebarRepoName} {
+    filter: brightness(85%);
+  }
+
+  & #{$sidebarRepoNameHover} {
+    filter: brightness(85%);
+    background-color: var(--color-main) !important;
+  }
 }
 
 body:has(#{$bitbucketMain}) {
@@ -72,6 +93,7 @@ body:has(#{$bitbucketMain}) {
   --color-hover-text: #579dff;
   --color-token: #aab1be;
   --color-token-function: #c678dd;
-
+  // override bitbucket to dark
+  @include themes.bitbucket-dark-mode-colors;
   background-color: var(--color-main);
 }
