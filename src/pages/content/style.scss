@@ -9,13 +9,16 @@
 $bitbucketMain: '.css-kyhvoj';
 $sidebarSelector: '.css-4rxc6l';
 $sidebarTabSelector: '.css-1hpn4bw';
-$sidebarButtonOnHover: '.css-t3yiul';
+$sidebarButtonOnActive: '.css-t3yiul';
 $sidebarButton: '.css-1t5na7c';
 $sidebarButtonText: '.css-1olrtn';
-$sidebarButtonTextHover: '.css-1h2b0g4';
+$sidebarButtonTextActive: '.css-1h2b0g4';
 $sidebarRepoName: '.css-ienhqj';
 $sidebarRepoNameHover: '.css-ibmu9r';
 $sidebarActiveIcon: '.css-1afrefi';
+$searchInput: '.css-1s0fs6f';
+$searchInputActive: '.css-1e2ir0d';
+$searchInputHover: '.css-1pialsq';
 
 #{$bitbucketMain} {
   & #{$sidebarSelector} {
@@ -28,19 +31,23 @@ $sidebarActiveIcon: '.css-1afrefi';
   }
 
   & #{$sidebarButtonText} {
-    color: var(--text-color) !important;
+    color: var(--color-active-surface-text-color) !important;
   }
 
-  & #{$sidebarActiveIcon} {
-    color: var(--text-color) !important;
-  }
-
-  & #{$sidebarButtonOnHover}#{$sidebarButtonOnHover} {
+  & #{$sidebarButtonOnActive}#{$sidebarButtonOnActive} {
     background-color: var(--color-hover) !important;
-    color: var(--color-hover-text) !important;
+    color: var(--text-color) !important;
+
+    & #{$sidebarActiveIcon} {
+      color: var(--text-color) !important;
+    }
+
+    & #{$sidebarButtonTextActive} {
+      color: var(--text-color) !important;
+    }
   }
 
-  & #{$sidebarButtonTextHover} {
+  & #{$sidebarButtonTextActive} {
     color: var(--color-active-surface-text-color) !important;
   }
 
@@ -97,12 +104,31 @@ $sidebarActiveIcon: '.css-1afrefi';
   & .show-more-lines-button {
     background-color: var(--color-main) !important;
   }
+
+  & #{$searchInput} {
+    background-color: var(--color-active-surface) !important;
+    color: #fff !important;
+    border-color: var(--ds-surface-pressed);
+  }
+
+  & #{$searchInputActive} {
+    background-color: var(--surface-active-gray) !important;
+    color: #fff !important;
+    border-color: var(--color-hover);
+  }
+
+  & #{$searchInputHover} {
+    background-color: var(--surface-active-gray) !important;
+    color: #fff !important;
+    border-color: var(--ds-surface-pressed);
+  }
 }
 
 body:has(#{$bitbucketMain}) {
   --text-color: #fff;
   --color-main: #1d2125;
   --color-active-surface: #1c2b41;
+  --surface-active-gray: #323940;
   --color-active-surface-text-color: #9fadbc;
   --color-hover: #09326c;
   --color-hover-text: #579dff;
