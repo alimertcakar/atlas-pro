@@ -19,6 +19,8 @@ $sidebarActiveIcon: '.css-1afrefi';
 $searchInput: '.css-1s0fs6f';
 $searchInputActive: '.css-1e2ir0d';
 $searchInputHover: '.css-1pialsq';
+$commitRowActive: '.css-95a91x';
+$commitRow: '.css-199ngp7';
 
 #{$bitbucketMain} {
   & #{$sidebarSelector} {
@@ -121,6 +123,32 @@ $searchInputHover: '.css-1pialsq';
     background-color: var(--surface-active-gray) !important;
     color: #fff !important;
     border-color: var(--ds-surface-pressed);
+  }
+
+  & #{$commitRowActive} {
+    background: var(--color-active-surface) !important;
+    box-shadow: none !important;
+  }
+
+  & #{$commitRow} {
+    &:hover {
+      background: var(--color-active-surface) !important;
+      box-shadow: none !important;
+    }
+  }
+
+  /* TODO better colors below*/
+  & .monaco-editor-background {
+    background: var(--color-main) !important;
+    & .mtk1 {
+      color: var(--color-token) !important;
+    }
+    & .mtk20 {
+      color: var(--color-token) !important;
+    }
+    & .mtk26 {
+      color: var(--color-token-function) !important;
+    }
   }
 }
 
