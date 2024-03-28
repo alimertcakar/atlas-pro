@@ -1,7 +1,7 @@
 import { StorageType, createStorage } from '@src/shared/storages/base';
 
 const storage = createStorage(
-  'theme-storage-key',
+  'atlassian-pro-storage',
   {
     isEnabled: true,
   },
@@ -11,7 +11,7 @@ const storage = createStorage(
   },
 );
 
-const exampleThemeStorage = {
+const mainStorage = {
   ...storage,
   toggle: async () => {
     await storage.set(val => {
@@ -25,4 +25,4 @@ const exampleThemeStorage = {
   },
 };
 
-export default exampleThemeStorage;
+export default mainStorage;

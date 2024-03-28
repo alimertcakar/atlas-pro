@@ -1,14 +1,13 @@
 import '@pages/popup/Popup.css';
 
 import logo from '@assets/img/logo.svg';
+import mainStorage from '@root/src/shared/storages/mainStorage';
 import withErrorBoundary from '@src/shared/hoc/withErrorBoundary';
 import withSuspense from '@src/shared/hoc/withSuspense';
 import useStorage from '@src/shared/hooks/useStorage';
-import exampleThemeStorage from '@src/shared/storages/exampleThemeStorage';
-import React from 'react';
 
 const Popup = () => {
-  const values = useStorage(exampleThemeStorage);
+  const values = useStorage(mainStorage);
 
   return (
     <div
@@ -34,7 +33,7 @@ const Popup = () => {
             backgroundColor: values.isEnabled ? '#fff' : '#000',
             color: values.isEnabled ? '#000' : '#fff',
           }}
-          onClick={exampleThemeStorage.toggle}>
+          onClick={mainStorage.toggle}>
           Toggle theme
         </button>
       </header>
