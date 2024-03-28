@@ -1,22 +1,26 @@
-import { BaseStorage, createStorage, StorageType } from '@src/shared/storages/base';
+import { StorageType, createStorage } from '@src/shared/storages/base';
 
-type Theme = 'light' | 'dark';
+const storage = createStorage(
+  'theme-storage-key',
+  {
+    isEnabled: true,
+  },
+  {
+    storageType: StorageType.Local,
+    liveUpdate: true,
+  },
+);
 
-type ThemeStorage = BaseStorage<Theme> & {
-  toggle: () => Promise<void>;
-};
-
-const storage = createStorage<Theme>('theme-storage-key', 'light', {
-  storageType: StorageType.Local,
-  liveUpdate: true,
-});
-
-const exampleThemeStorage: ThemeStorage = {
+const exampleThemeStorage = {
   ...storage,
-  // TODO: extends your own methods
   toggle: async () => {
-    await storage.set(currentTheme => {
-      return currentTheme === 'light' ? 'dark' : 'light';
+    await storage.set(val => {
+      if (document.body.classList.contains('atlassian_pro_enabled')) {
+        document.body.classList.remove('atlassian_pro_enabled');
+      } else {
+        document.body.classList.add('atlassian_pro_enabled');
+      }
+      return { ...val, isEnabled: val?.isEnabled ? false : true };
     });
   },
 };

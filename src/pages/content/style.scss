@@ -6,7 +6,7 @@
 //           additionalData: "$bitbucketMain: " + parsedMainSelector + ";",
 //         },
 //       },
-$bitbucketMain: '.css-kyhvoj';
+$atlassianProEnabled: '.atlassian_pro_enabled';
 $sidebarSelector: '.css-4rxc6l';
 $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnActive: '.css-t3yiul';
@@ -24,7 +24,7 @@ $commitRow: '.css-199ngp7';
 $pipelinesResultPane: '.css-1t3ixu6';
 $pipelinesResultPaneTop: '.css-9inabr';
 
-#{$bitbucketMain} {
+#{$atlassianProEnabled} {
   & #{$sidebarSelector} {
     background-color: var(--color-main);
   }
@@ -162,7 +162,7 @@ $pipelinesResultPaneTop: '.css-9inabr';
   }
 }
 
-body:has(#{$bitbucketMain}) {
+body#{$atlassianProEnabled} {
   --text-color: #fff;
   --color-main: #1d2125;
   --color-active-surface: #1c2b41;
