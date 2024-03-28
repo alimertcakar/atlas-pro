@@ -1,21 +1,22 @@
-import React from 'react';
-import logo from '@assets/img/logo.svg';
 import '@pages/sidepanel/SidePanel.css';
-import useStorage from '@src/shared/hooks/useStorage';
-import exampleThemeStorage from '@src/shared/storages/exampleThemeStorage';
-import withSuspense from '@src/shared/hoc/withSuspense';
+
+import logo from '@assets/img/logo.svg';
+import mainStorage from '@root/src/shared/storages/mainStorage';
 import withErrorBoundary from '@src/shared/hoc/withErrorBoundary';
+import withSuspense from '@src/shared/hoc/withSuspense';
+import useStorage from '@src/shared/hooks/useStorage';
+import React from 'react';
 
 const SidePanel = () => {
-  const theme = useStorage(exampleThemeStorage);
+  const values = useStorage(mainStorage);
 
   return (
     <div
       className="App"
       style={{
-        backgroundColor: theme === 'light' ? '#fff' : '#000',
+        backgroundColor: values.isEnabled ? '#fff' : '#000',
       }}>
-      <header className="App-header" style={{ color: theme === 'light' ? '#000' : '#fff' }}>
+      <header className="App-header" style={{ color: values.isEnabled ? '#000' : '#fff' }}>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/pages/sidepanel/SidePanel.tsx</code> and save to reload.
@@ -25,15 +26,15 @@ const SidePanel = () => {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ color: theme === 'light' && '#0281dc', marginBottom: '10px' }}>
+          style={{ color: values.isEnabled && '#0281dc', marginBottom: '10px' }}>
           Learn React!
         </a>
         <button
           style={{
-            backgroundColor: theme === 'light' ? '#fff' : '#000',
-            color: theme === 'light' ? '#000' : '#fff',
+            backgroundColor: values.isEnabled ? '#fff' : '#000',
+            color: values.isEnabled ? '#000' : '#fff',
           }}
-          onClick={exampleThemeStorage.toggle}>
+          onClick={mainStorage.toggle}>
           Toggle theme
         </button>
       </header>
