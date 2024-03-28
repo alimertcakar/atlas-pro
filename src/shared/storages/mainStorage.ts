@@ -23,6 +23,7 @@ const mainStorage = {
 export default mainStorage;
 
 mainStorage.subscribe(async () => {
+  if (window.location.host !== 'bitbucket.org') return;
   const storage = await mainStorage.get();
   const isEnabled = storage?.isEnabled;
   if (isEnabled) {
