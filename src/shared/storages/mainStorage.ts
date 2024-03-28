@@ -15,14 +15,19 @@ const mainStorage = {
   ...storage,
   toggle: async () => {
     await storage.set(val => {
-      if (document.body.classList.contains('atlassian_pro_enabled')) {
-        document.body.classList.remove('atlassian_pro_enabled');
-      } else {
-        document.body.classList.add('atlassian_pro_enabled');
-      }
       return { ...val, isEnabled: val?.isEnabled ? false : true };
     });
   },
 };
 
 export default mainStorage;
+
+mainStorage.subscribe(async () => {
+  const storage = await mainStorage.get();
+  const isEnabled = storage?.isEnabled;
+  if (isEnabled) {
+    document.body.classList.add('atlassian_pro_enabled');
+  } else {
+    document.body.classList.remove('atlassian_pro_enabled');
+  }
+});
