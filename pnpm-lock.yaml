@@ -23,8 +23,8 @@ devDependencies:
     specifier: 18.4.4
     version: 18.4.4(@types/node@20.8.10)(typescript@5.2.2)
   '@commitlint/config-conventional':
-    specifier: 18.1.0
-    version: 18.1.0
+    specifier: 19.1.0
+    version: 19.1.0
   '@rollup/plugin-sucrase':
     specifier: ^5.0.2
     version: 5.0.2(rollup@4.3.0)
@@ -409,10 +409,11 @@ packages:
       - typescript
     dev: true
 
-  /@commitlint/config-conventional@18.1.0:
-    resolution: {integrity: sha512-8vvvtV3GOLEMHeKc8PjRL1lfP1Y4B6BG0WroFd9PJeRiOc3nFX1J0wlJenLURzl9Qus6YXVGWf+a/ZlbCKT3AA==}
+  /@commitlint/config-conventional@19.1.0:
+    resolution: {integrity: sha512-KIKD2xrp6Uuk+dcZVj3++MlzIr/Su6zLE8crEDQCZNvWHNQSeeGbzOlNtsR32TUy6H3JbP7nWgduAHCaiGQ6EA==}
     engines: {node: '>=v18'}
     dependencies:
+      '@commitlint/types': 19.0.3
       conventional-changelog-conventionalcommits: 7.0.2
     dev: true
 
@@ -551,6 +552,14 @@ packages:
     engines: {node: '>=v18'}
     dependencies:
       chalk: 4.1.2
+    dev: true
+
+  /@commitlint/types@19.0.3:
+    resolution: {integrity: sha512-tpyc+7i6bPG9mvaBbtKUeghfyZSDgWquIDfMgqYtTbmZ9Y9VzEm2je9EYcQ0aoz5o7NvGS+rcDec93yO08MHYA==}
+    engines: {node: '>=v18'}
+    dependencies:
+      '@types/conventional-commits-parser': 5.0.0
+      chalk: 5.3.0
     dev: true
 
   /@esbuild/aix-ppc64@0.20.2:
@@ -1267,17 +1276,23 @@ packages:
       '@types/har-format': 1.2.14
     dev: true
 
+  /@types/conventional-commits-parser@5.0.0:
+    resolution: {integrity: sha512-loB369iXNmAZglwWATL+WRe+CRMmmBPtpolYzIebFaX4YA3x+BEfLqhUAV9WanycKI3TG1IMr5bMJDajDKLlUQ==}
+    dependencies:
+      '@types/node': 20.8.10
+    dev: true
+
   /@types/eslint-scope@3.7.6:
     resolution: {integrity: sha512-zfM4ipmxVKWdxtDaJ3MP3pBurDXOCoyjvlpE3u6Qzrmw4BPbfm4/ambIeTk/r/J0iq/+2/xp0Fmt+gFvXJY2PQ==}
     dependencies:
       '@types/eslint': 8.44.5
-      '@types/estree': 1.0.3
+      '@types/estree': 1.0.5
     dev: true
 
   /@types/eslint@8.44.5:
     resolution: {integrity: sha512-Ol2eio8LtD/tGM4Ga7Jb83NuFwEv3NqvssSlifXL9xuFpSyQZw0ecmm2Kux6iU0KxQmp95hlPmGCzGJ0TCFeRA==}
     dependencies:
-      '@types/estree': 1.0.3
+      '@types/estree': 1.0.5
       '@types/json-schema': 7.0.14
     dev: true
 
@@ -5722,7 +5737,7 @@ packages:
         optional: true
     dependencies:
       '@types/eslint-scope': 3.7.6
-      '@types/estree': 1.0.3
+      '@types/estree': 1.0.5
       '@webassemblyjs/ast': 1.11.6
       '@webassemblyjs/wasm-edit': 1.11.6
       '@webassemblyjs/wasm-parser': 1.11.6
