@@ -1,5 +1,6 @@
-import reloadOnUpdate from 'virtual:reload-on-update-in-background-script';
 import 'webextension-polyfill';
+
+import reloadOnUpdate from 'virtual:reload-on-update-in-background-script';
 
 reloadOnUpdate('pages/background');
 
@@ -8,5 +9,3 @@ reloadOnUpdate('pages/background');
  * If you do not use the css of the content script, please delete it.
  */
 reloadOnUpdate('pages/content/style.scss');
-
-console.log('background loaded');
