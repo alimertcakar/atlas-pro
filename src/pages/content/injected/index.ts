@@ -8,7 +8,3 @@
  *
  */
 import('@root/src/shared/storages/mainStorage');
-
-if (window.location.host === 'bitbucket.org') {
-  document.body.classList.add('atlassian_pro_enabled');
-}

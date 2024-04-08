@@ -6,7 +6,8 @@
 //           additionalData: "$bitbucketMain: " + parsedMainSelector + ";",
 //         },
 //       },
-$atlassianProEnabled: '.atlassian_pro_enabled';
+$atlassianProThemeDark: '.atlassian_pro_theme-dark';
+$codeEditorAtomOneDark: '.atlassian_pro__code-editor-dark';
 $sidebarSelector: '.css-4rxc6l';
 $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnActive: '.css-t3yiul';
@@ -24,7 +25,7 @@ $commitRow: '.css-199ngp7';
 $pipelinesResultPane: '.css-1t3ixu6';
 $pipelinesResultPaneTop: '.css-9inabr';
 
-#{$atlassianProEnabled} {
+#{$atlassianProThemeDark} {
   & #{$sidebarSelector} {
     background-color: var(--color-main);
   }
@@ -68,16 +69,6 @@ $pipelinesResultPaneTop: '.css-9inabr';
   .line-numbers.gutter-width-apply-width {
     background-color: var(--color-main) !important;
     color: #fff;
-  }
-
-  pre.code-component {
-    background-color: unset;
-    color: #62aeef;
-    & .token {
-      &.function {
-        color: var(--color-token-function);
-      }
-    }
   }
 
   div[data-testid='renderer-wrapper'] {
@@ -139,20 +130,6 @@ $pipelinesResultPaneTop: '.css-9inabr';
     }
   }
 
-  /* TODO better colors below*/
-  & .monaco-editor-background {
-    background: var(--color-main) !important;
-    & .mtk1 {
-      color: var(--color-token) !important;
-    }
-    & .mtk20 {
-      color: var(--color-token) !important;
-    }
-    & .mtk26 {
-      color: var(--color-token-function) !important;
-    }
-  }
-
   & #{$pipelinesResultPane} {
     background-color: var(--color-main) !important;
   }
@@ -162,17 +139,44 @@ $pipelinesResultPaneTop: '.css-9inabr';
   }
 }
 
-body#{$atlassianProEnabled} {
+body#{$atlassianProThemeDark} {
   --text-color: #fff;
   --color-main: #1d2125;
   --color-active-surface: #1c2b41;
   --surface-active-gray: #323940;
   --color-active-surface-text-color: #9fadbc;
   --color-hover: #09326c;
-  --color-hover-text: #579dff;
-  --color-token: #aab1be;
-  --color-token-function: #c678dd;
+
   // override bitbucket to dark
   @include themes.bitbucket-dark-mode-colors;
   background-color: var(--color-main);
+}
+
+body#{$codeEditorAtomOneDark} {
+  --token-color: #aab1be;
+  --function-color: #c678dd;
+  --code-text-color: #1d2125;
+
+  & .monaco-editor-background {
+    background: var(--code-text-color) !important;
+    & .mtk1 {
+      color: var(--token-color) !important;
+    }
+    & .mtk20 {
+      color: var(--token-color) !important;
+    }
+    & .mtk26 {
+      color: var(--function-color) !important;
+    }
+  }
+
+  pre.code-component {
+    background-color: unset;
+    color: #62aeef;
+    & .token {
+      &.function {
+        color: var(--function-color);
+      }
+    }
+  }
 }
