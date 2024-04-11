@@ -75,6 +75,7 @@ html {
   font-weight: bold;
   color: #c0c0c0;
   font-size: 1rem;
+  margin-bottom: 0.25rem;
 }
 
 .theme-option__color {
@@ -158,6 +159,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
+
 .app-banner-inner {
   display: flex;
   align-items: center;
@@ -166,6 +168,11 @@ html {
   background: #2c333a;
   width: 100%;
   border-radius: 5px;
+}
+
+.app-user-type {
+  font-weight: bold;
+  margin-left: 2ch;
 }
 
 .app br {

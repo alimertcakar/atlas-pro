@@ -46,7 +46,9 @@ const Popup = () => {
     <div className="app">
       <div className="app-inner">
         <div className="app-banner">
-          <div className="app-banner-inner">Atlassian Pro v0.1.12 [Standard Edition]</div>
+          <div className="app-banner-inner">
+            Atlassian Pro v0.1.12 <span className="app-user-type">Standard Edition</span>
+          </div>
         </div>
         <br />
         <div className="select-title">Color Theme</div>
