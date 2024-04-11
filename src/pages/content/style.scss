@@ -13,6 +13,7 @@ $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnActive: '.css-t3yiul';
 $sidebarButton: '.css-1t5na7c';
 $sidebarButtonText: '.css-1olrtn';
+$sidebarButtonActive: '.css-queiy2';
 $sidebarButtonTextActive: '.css-1h2b0g4';
 $sidebarRepoName: '.css-ienhqj';
 $sidebarRepoNameHover: '.css-ibmu9r';
@@ -32,6 +33,11 @@ $pipelinesResultPaneTop: '.css-9inabr';
 
   & #{$sidebarButton} {
     background-color: var(--color-active-surface) !important;
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarButtonActive} {
+    background-color: var(--color-hover) !important;
     color: var(--color-active-surface-text-color) !important;
   }
 
@@ -171,26 +177,29 @@ body#{$codeEditorAtomOneDark} {
     & .mtk4 {
       color: var(--entity-name-type) !important;
     }
-    & .mtk-5 {
+    & .mtk5 {
       color: var(--function-color) !important;
     }
     & .mtk7 {
       color: var(--function-color) !important;
     }
-    & .mtk7 {
-      color: var(--atr-name-color) !important;
-    }
-    & .mtk-9 {
+    & .mtk9 {
       color: var(--imports-color) !important;
     }
-    & .mtk-11 {
+    & .mtk11 {
+      color: var(--string-color) !important;
+    }
+    & .mtk12 {
+      color: var(--atr-name-color) !important;
+    }
+    & .mtk16 {
       color: var(--string-color) !important;
     }
     & .mtk20 {
-      color: var(--token-color) !important;
+      color: var(--imports-color) !important;
     }
     & .mtk26 {
-      color: var(--function-color) !important;
+      color: var(--class-color) !important;
     }
   }
 
