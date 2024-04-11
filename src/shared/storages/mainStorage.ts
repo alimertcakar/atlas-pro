@@ -1,9 +1,12 @@
 import { StorageType, createStorage } from '@src/shared/storages/base';
 
+import { CodeEditorTheme, Theme } from './theme.model';
+
 const storage = createStorage(
   'atlassian-pro-storage',
   {
-    isEnabled: true,
+    theme: Theme.AtlassianDark,
+    codeEditorTheme: CodeEditorTheme.AtomOneDark,
   },
   {
     storageType: StorageType.Local,
@@ -13,22 +16,34 @@ const storage = createStorage(
 
 const mainStorage = {
   ...storage,
-  toggle: async () => {
+  setTheme: async theme => {
     await storage.set(val => {
-      return { ...val, isEnabled: val?.isEnabled ? false : true };
+      return { ...val, theme };
+    });
+  },
+  setCodeEditorTheme: async codeEditorTheme => {
+    await storage.set(val => {
+      return { ...val, codeEditorTheme };
     });
   },
 };
 
 export default mainStorage;
 
+export const toggleThemeClass = (condition, className) => {
+  if (condition) {
+    document.body.classList.add(className);
+  } else {
+    document.body.classList.remove(className);
+  }
+};
+
 mainStorage.subscribe(async () => {
   if (window.location.host !== 'bitbucket.org') return;
   const storage = await mainStorage.get();
-  const isEnabled = storage?.isEnabled;
-  if (isEnabled) {
-    document.body.classList.add('atlassian_pro_enabled');
-  } else {
-    document.body.classList.remove('atlassian_pro_enabled');
-  }
+  const theme = storage?.theme;
+  const codeEditorTheme = storage?.codeEditorTheme;
+
+  toggleThemeClass(theme === Theme.AtlassianDark, 'atlassian_pro_theme-dark');
+  toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlassian_pro__code-editor-dark');
 });

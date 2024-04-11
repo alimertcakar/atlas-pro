@@ -12,12 +12,15 @@
   padding: 10px;
   gap: 5px;
 }
+html {
+  background: #1d2125;
+}
 
 .app-highlight-text {
   font-weight: bold;
 }
 
-.app button {
+.app .solid-button {
   background: #2953db;
   color: #fff;
   border-radius: 15px;
@@ -26,9 +29,26 @@
   border: none;
 }
 
+.app {
+  .text-button {
+    margin-top: 10px;
+    background: none;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    color: #418af8;
+    width: auto;
+    display: flex;
+    font-size: 0.75rem;
+  }
+}
+.app-inner {
+  background: #1d2125;
+}
+
 .app button:hover {
   cursor: pointer;
-  background: #1e3f9e;
 }
 
 .app__select {
@@ -44,9 +64,124 @@
   padding: 4px 3px 3px 5px;
   margin: 0;
   font: inherit;
-  outline: none; /* remove focus ring from Webkit */
+  outline: none;
   line-height: 1.2;
-  background: #000;
+  background: #1d2125;
   color: white;
   border: 0;
+}
+
+.select-title {
+  font-weight: bold;
+  color: #c0c0c0;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.theme-option__color {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.theme-option__colors-container {
+  display: flex;
+}
+
+.theme-option {
+  background: #384047;
+  color: #c0c0c0;
+  border-radius: 5px;
+  max-width: 100px;
+  padding: 5px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-wrap: nowrap;
+  user-select: none;
+}
+
+.theme-option:hover {
+  cursor: pointer;
+  background: rgb(88, 93, 99);
+}
+
+.theme-options {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  gap: 15px;
+  padding: 5px;
+  min-height: 50px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.see-options-button {
+  display: flex;
+  background: none !important;
+  color: #c0c0c0;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  max-width: 150px;
+  user-select: none;
+  margin-top: 15px;
+}
+
+.see-options-button-container {
+  background: #1d2125;
+  padding: 0 15px;
+  margin: 0;
+  margin: 0 -15px;
+  padding-bottom: 10px;
+}
+
+.app-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 15px;
+  background: #2c333a;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.app-user-type {
+  font-weight: bold;
+  margin-left: 2ch;
+}
+
+.app br {
+  padding: 0;
+  background: rgba(207, 207, 207, 0.342);
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  border-radius: 50%;
+  content: '';
+  display: block;
 }

@@ -9,6 +9,5 @@
  */
 import('@root/src/shared/storages/mainStorage');
 
-if (window.location.host === 'bitbucket.org') {
-  document.body.classList.add('atlassian_pro_enabled');
-}
+// TODO initialize theme here so it takes effect faster
+// toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlassian_pro__code-editor-dark');
