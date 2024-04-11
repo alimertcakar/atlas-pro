@@ -30,7 +30,7 @@ const mainStorage = {
 
 export default mainStorage;
 
-const toggleThemeClass = (condition, className) => {
+export const toggleThemeClass = (condition, className) => {
   if (condition) {
     document.body.classList.add(className);
   } else {

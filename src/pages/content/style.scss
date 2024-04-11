@@ -154,13 +154,37 @@ body#{$atlassianProThemeDark} {
 
 body#{$codeEditorAtomOneDark} {
   --token-color: #aab1be;
-  --function-color: #c678dd;
+  --punctuation-color: #abb2bf;
+  --function-color: #61afef;
+  --class-color: #c678dd;
+  --entity-name-type: #e5c07b;
   --code-text-color: #1d2125;
+  --atr-name-color: #d19a66;
+  --imports-color: #e06c75;
+  --string-color: #98c379;
 
   & .monaco-editor-background {
     background: var(--code-text-color) !important;
     & .mtk1 {
       color: var(--token-color) !important;
+    }
+    & .mtk4 {
+      color: var(--entity-name-type) !important;
+    }
+    & .mtk-5 {
+      color: var(--function-color) !important;
+    }
+    & .mtk7 {
+      color: var(--function-color) !important;
+    }
+    & .mtk7 {
+      color: var(--atr-name-color) !important;
+    }
+    & .mtk-9 {
+      color: var(--imports-color) !important;
+    }
+    & .mtk-11 {
+      color: var(--string-color) !important;
     }
     & .mtk20 {
       color: var(--token-color) !important;
@@ -171,11 +195,52 @@ body#{$codeEditorAtomOneDark} {
   }
 
   pre.code-component {
-    background-color: unset;
-    color: #62aeef;
+    background-color: #282c34;
+    color: var(--atr-name-color);
     & .token {
       &.function {
         color: var(--function-color);
+        font-weight: normal;
+      }
+      &.class-name {
+        color: var(--entity-name-type);
+        font-weight: normal;
+      }
+      &.attr-name {
+        color: var(--atr-name-color);
+      }
+      &.punctuation {
+        color: var(--punctuation-color);
+      }
+      &.tag {
+        color: var(--punctuation-color);
+      }
+      &.property-access {
+        color: var(--imports-color);
+      }
+      &.imports {
+        color: var(--imports-color);
+      }
+      &.string {
+        color: var(--string-color);
+      }
+      &.keyword {
+        color: var(--class-color);
+      }
+      &.keyword.module {
+        color: var(--class-color);
+      }
+      &.number {
+        color: var(--atr-name-color);
+      }
+      &.dom.variable {
+        color: var(--punctuation-color);
+      }
+      &.imports .maybe-class-name {
+        color: var(--imports-color);
+      }
+      &.maybe-class-name {
+        color: var(--punctuation-color);
       }
     }
   }
