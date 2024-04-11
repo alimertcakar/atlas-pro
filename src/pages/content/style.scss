@@ -196,7 +196,8 @@ body#{$codeEditorAtomOneDark} {
 
   pre.code-component {
     background-color: #282c34;
-    color: var(--atr-name-color);
+    color: var(--punctuation-color);
+
     & .token {
       &.function {
         color: var(--function-color);
