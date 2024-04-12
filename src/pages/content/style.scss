@@ -6,13 +6,15 @@
 //           additionalData: "$bitbucketMain: " + parsedMainSelector + ";",
 //         },
 //       },
-$atlassianProThemeDark: '.atlassian_pro_theme-dark';
-$codeEditorAtomOneDark: '.atlassian_pro__code-editor-dark';
+$atlasProThemeDark: '.atlas_pro_theme-dark';
+$codeEditorAtomOneDark: '.atlas_pro__code-editor-dark';
+$atlasProThemePurple: '.atlas_pro_theme-purple';
 $sidebarSelector: '.css-4rxc6l';
 $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnActive: '.css-t3yiul';
 $sidebarButton: '.css-1t5na7c';
 $sidebarButtonText: '.css-1olrtn';
+$sidebarButtonActive: '.css-queiy2';
 $sidebarButtonTextActive: '.css-1h2b0g4';
 $sidebarRepoName: '.css-ienhqj';
 $sidebarRepoNameHover: '.css-ibmu9r';
@@ -25,13 +27,30 @@ $commitRow: '.css-199ngp7';
 $pipelinesResultPane: '.css-1t3ixu6';
 $pipelinesResultPaneTop: '.css-9inabr';
 
-#{$atlassianProThemeDark} {
+body#{$atlasProThemeDark} {
+  --text-color: #fff;
+  --color-main: #1d2125;
+  --color-active-surface: #1c2b41;
+  --surface-active-gray: #323940;
+  --color-active-surface-text-color: #9fadbc;
+  --color-hover: #09326c;
+
+  // import css variable overrides
+  @include themes.dark-mode-colors;
+
+  // custom style the rest
+  background-color: var(--color-main);
   & #{$sidebarSelector} {
     background-color: var(--color-main);
   }
 
   & #{$sidebarButton} {
     background-color: var(--color-active-surface) !important;
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarButtonActive} {
+    background-color: var(--color-hover) !important;
     color: var(--color-active-surface-text-color) !important;
   }
 
@@ -139,17 +158,143 @@ $pipelinesResultPaneTop: '.css-9inabr';
   }
 }
 
-body#{$atlassianProThemeDark} {
+body#{$atlasProThemePurple} {
   --text-color: #fff;
-  --color-main: #1d2125;
-  --color-active-surface: #1c2b41;
-  --surface-active-gray: #323940;
+  --color-main: #fafafa;
+  --color-active-surface: #493192;
+  --surface-active-gray: #6143bb;
   --color-active-surface-text-color: #9fadbc;
-  --color-hover: #09326c;
+  --color-hover: #5d3ebc;
 
-  // override bitbucket to dark
-  @include themes.bitbucket-dark-mode-colors;
+  //  import css variable overrides
+  @include themes.dark-mode-colors;
+  @include themes.purple-mode-colors;
+
+  // custom style the rest
   background-color: var(--color-main);
+  & #{$sidebarSelector} {
+    background-color: var(--ds-surface);
+  }
+
+  header[role='banner'] {
+    background-color: var(--color-active-surface) !important;
+  }
+
+  & #{$sidebarButton} {
+    background-color: var(--color-main) !important;
+    color: var(--ds-text) !important;
+  }
+
+  & #{$sidebarButtonActive} {
+    background-color: var(--color-hover) !important;
+    color: var(--color-active-surface-text-color) !important;
+  }
+
+  & #{$sidebarButtonText} {
+    color: var(--ds-text) !important;
+  }
+
+  & #{$sidebarButtonOnActive}#{$sidebarButtonOnActive} {
+    background-color: var(--color-main) !important;
+    color: var(--ds-text) !important;
+
+    & #{$sidebarActiveIcon} {
+      color: var(--color-hover) !important;
+    }
+    & #{$sidebarButtonText} {
+      color: var(--color-hover) !important;
+    }
+
+    & #{$sidebarButtonTextActive} {
+      color: var(--color-hover) !important;
+    }
+  }
+
+  & #{$sidebarButtonTextActive} {
+    color: var(--color-hover) !important;
+  }
+
+  & #{$sidebarTabSelector}::before {
+    background-color: var(--ds-surface);
+  }
+
+  // hide +- icons on diff display
+  .code-diff.syntax-highlighted.__rbb_syntax_highlight::before {
+    display: none;
+  }
+
+  .chunk-heading-wrapper.gutter-width-apply-padding-left,
+  .line-numbers.gutter-width-apply-width {
+    background-color: var(--color-main) !important;
+    color: #fff;
+  }
+
+  div[data-testid='renderer-wrapper'] {
+    padding: 0.5rem;
+    &:hover {
+      background-color: var(--color-main);
+      border-radius: 15px;
+      filter: brightness(85%);
+    }
+  }
+
+  & #{$sidebarRepoName} {
+    // background-color: var(--ds-text) !important;
+    & * {
+      color: var(--ds-text) !important;
+    }
+  }
+
+  & #{$sidebarRepoNameHover} {
+    filter: brightness(85%);
+    background-color: var(--ds-text-subtle) !important;
+    border-radius: 3px;
+    & * {
+      color: var(--ds-text) !important;
+    }
+  }
+
+  & .show-more-lines-button {
+    background-color: var(--color-main) !important;
+  }
+
+  & #{$searchInput} {
+    background-color: var(--color-active-surface) !important;
+    color: #fff !important;
+    border-color: var(--ds-surface-pressed);
+  }
+
+  & #{$searchInputActive} {
+    background-color: var(--surface-active-gray) !important;
+    color: #fff !important;
+    border-color: var(--color-hover);
+  }
+
+  & #{$searchInputHover} {
+    background-color: var(--surface-active-gray) !important;
+    color: #fff !important;
+    border-color: var(--ds-surface-pressed);
+  }
+
+  & #{$commitRowActive} {
+    background: var(--color-active-surface) !important;
+    box-shadow: none !important;
+  }
+
+  & #{$commitRow} {
+    &:hover {
+      background: var(--color-active-surface) !important;
+      box-shadow: none !important;
+    }
+  }
+
+  & #{$pipelinesResultPane} {
+    background-color: var(--color-main) !important;
+  }
+
+  & #{$pipelinesResultPaneTop} {
+    background-color: var(--color-main) !important;
+  }
 }
 
 body#{$codeEditorAtomOneDark} {
@@ -171,26 +316,29 @@ body#{$codeEditorAtomOneDark} {
     & .mtk4 {
       color: var(--entity-name-type) !important;
     }
-    & .mtk-5 {
+    & .mtk5 {
       color: var(--function-color) !important;
     }
     & .mtk7 {
       color: var(--function-color) !important;
     }
-    & .mtk7 {
-      color: var(--atr-name-color) !important;
-    }
-    & .mtk-9 {
+    & .mtk9 {
       color: var(--imports-color) !important;
     }
-    & .mtk-11 {
+    & .mtk11 {
+      color: var(--string-color) !important;
+    }
+    & .mtk12 {
+      color: var(--atr-name-color) !important;
+    }
+    & .mtk16 {
       color: var(--string-color) !important;
     }
     & .mtk20 {
-      color: var(--token-color) !important;
+      color: var(--imports-color) !important;
     }
     & .mtk26 {
-      color: var(--function-color) !important;
+      color: var(--class-color) !important;
     }
   }
 

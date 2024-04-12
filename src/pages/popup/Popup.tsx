@@ -47,7 +47,7 @@ const Popup = () => {
       <div className="app-inner">
         <div className="app-banner">
           <div className="app-banner-inner">
-            Atlassian Pro v0.1.12 <span className="app-user-type">Standard Edition</span>
+            Atlas Pro v0.1.12 <span className="app-user-type">Standard Edition</span>
           </div>
         </div>
         <br />
