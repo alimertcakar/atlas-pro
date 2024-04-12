@@ -29,22 +29,3 @@ const mainStorage = {
 };
 
 export default mainStorage;
-
-export const toggleThemeClass = (condition, className) => {
-  if (condition) {
-    document.body.classList.add(className);
-  } else {
-    document.body.classList.remove(className);
-  }
-};
-
-mainStorage.subscribe(async () => {
-  if (window.location.host !== 'bitbucket.org') return;
-  const storage = await mainStorage.get();
-  const theme = storage?.theme;
-  const codeEditorTheme = storage?.codeEditorTheme;
-
-  toggleThemeClass(theme === Theme.Dark, 'atlas_pro_theme-dark');
-  // toggleThemeClass(theme === Theme.Purple, 'atlas_pro_theme-purple');
-  toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlas_pro__code-editor-dark');
-});

@@ -7,7 +7,4 @@
  * If you want to use other modules in content scripts, you need to import them via these files.
  *
  */
-import('@root/src/shared/storages/mainStorage');
-
-// TODO initialize theme here so it takes effect faster
-// toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlas_pro__code-editor-dark');
+import('@root/src/pages/content/injected/initializeTheme');
