@@ -3,9 +3,9 @@ import { StorageType, createStorage } from '@src/shared/storages/base';
 import { CodeEditorTheme, Theme } from './theme.model';
 
 const storage = createStorage(
-  'atlassian-pro-storage',
+  'atlas-pro-storage',
   {
-    theme: Theme.AtlassianDark,
+    theme: Theme.Dark,
     codeEditorTheme: CodeEditorTheme.AtomOneDark,
   },
   {
@@ -44,7 +44,7 @@ mainStorage.subscribe(async () => {
   const theme = storage?.theme;
   const codeEditorTheme = storage?.codeEditorTheme;
 
-  toggleThemeClass(theme === Theme.AtlassianDark, 'atlassian_pro_theme-dark');
-  toggleThemeClass(theme === Theme.Purple, 'atlassian_pro_theme-purple');
-  toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlassian_pro__code-editor-dark');
+  toggleThemeClass(theme === Theme.Dark, 'atlas_pro_theme-dark');
+  // toggleThemeClass(theme === Theme.Purple, 'atlas_pro_theme-purple');
+  toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlas_pro__code-editor-dark');
 });

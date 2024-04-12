@@ -10,4 +10,4 @@
 import('@root/src/shared/storages/mainStorage');
 
 // TODO initialize theme here so it takes effect faster
-// toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlassian_pro__code-editor-dark');
+// toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlas_pro__code-editor-dark');

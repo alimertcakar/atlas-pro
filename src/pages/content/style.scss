@@ -6,9 +6,9 @@
 //           additionalData: "$bitbucketMain: " + parsedMainSelector + ";",
 //         },
 //       },
-$atlassianProThemeDark: '.atlassian_pro_theme-dark';
-$codeEditorAtomOneDark: '.atlassian_pro__code-editor-dark';
-$atlassianProThemePurple: '.atlassian_pro_theme-purple';
+$atlasProThemeDark: '.atlas_pro_theme-dark';
+$codeEditorAtomOneDark: '.atlas_pro__code-editor-dark';
+$atlasProThemePurple: '.atlas_pro_theme-purple';
 $sidebarSelector: '.css-4rxc6l';
 $sidebarTabSelector: '.css-1hpn4bw';
 $sidebarButtonOnActive: '.css-t3yiul';
@@ -27,7 +27,7 @@ $commitRow: '.css-199ngp7';
 $pipelinesResultPane: '.css-1t3ixu6';
 $pipelinesResultPaneTop: '.css-9inabr';
 
-body#{$atlassianProThemeDark} {
+body#{$atlasProThemeDark} {
   --text-color: #fff;
   --color-main: #1d2125;
   --color-active-surface: #1c2b41;
@@ -158,7 +158,7 @@ body#{$atlassianProThemeDark} {
   }
 }
 
-body#{$atlassianProThemePurple} {
+body#{$atlasProThemePurple} {
   --text-color: #fff;
   --color-main: #fafafa;
   --color-active-surface: #493192;

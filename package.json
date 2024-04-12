@@ -1,11 +1,11 @@
 {
-  "name": "atlassian-pro",
+  "name": "atlas-pro",
   "version": "0.0.1",
   "description": "chrome extension boilerplate",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alimertcakar/atlassian-pro.git"
+    "url": "https://github.com/alimertcakar/atlas-pro.git"
   },
   "scripts": {
     "build": "tsc --noEmit && vite build",
