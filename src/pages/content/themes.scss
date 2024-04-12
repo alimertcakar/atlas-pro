@@ -1,4 +1,4 @@
-@mixin bitbucket-dark-mode-colors {
+@mixin dark-mode-colors {
   --ds-text: #b6c2cf;
   --ds-text-accent-lime: #b3df72;
   --ds-text-accent-lime-bolder: #d3f1a7;
@@ -387,4 +387,12 @@
   --ds-opacity-loading: 0.2;
   --ds-UNSAFE-transparent: transparent;
   --ds-elevation-surface-current: #1d2125;
+}
+
+@mixin purple-mode-colors {
+  --ds-surface: #fafafa;
+  --ds-text: #444;
+  --ds-background-input: #f5f5f5;
+  --ds-text-subtle: #dcdcff;
+  --ds-background-brand-bold: #fff;
 }

@@ -45,5 +45,6 @@ mainStorage.subscribe(async () => {
   const codeEditorTheme = storage?.codeEditorTheme;
 
   toggleThemeClass(theme === Theme.AtlassianDark, 'atlassian_pro_theme-dark');
+  toggleThemeClass(theme === Theme.Purple, 'atlassian_pro_theme-purple');
   toggleThemeClass(codeEditorTheme === CodeEditorTheme.AtomOneDark, 'atlassian_pro__code-editor-dark');
 });
