@@ -88,7 +88,7 @@ const Popup = () => {
         <br />
         <div className="see-options-button-container">
           <button onClick={() => chrome.runtime.openOptionsPage()} className="see-options-button">
-            ⚙️See Options
+            ⚙️See More Options
           </button>
         </div>
       </div>
