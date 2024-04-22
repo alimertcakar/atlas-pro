@@ -101,8 +101,8 @@ devDependencies:
     specifier: 15.2.2
     version: 15.2.2
   magic-string:
-    specifier: ^0.30.6
-    version: 0.30.6
+    specifier: ^0.30.10
+    version: 0.30.10
   npm-run-all:
     specifier: 4.1.5
     version: 4.1.5
@@ -1580,7 +1580,7 @@ packages:
   /@vitest/snapshot@1.2.2:
     resolution: {integrity: sha512-SmGY4saEw1+bwE1th6S/cZmPxz/Q4JWsl7LvbQIky2tKE35US4gd0Mjzqfr84/4OD0tikGWaWdMja/nWL5NIPA==}
     dependencies:
-      magic-string: 0.30.6
+      magic-string: 0.30.10
       pathe: 1.1.1
       pretty-format: 29.7.0
     dev: true
@@ -4040,9 +4040,8 @@ packages:
     hasBin: true
     dev: true
 
-  /magic-string@0.30.6:
-    resolution: {integrity: sha512-n62qCLbPjNjyo+owKtveQxZFZTBm+Ms6YoGD23Wew6Vw337PElFNifQpknPruVRQV57kVShPnLGo9vWxVhpPvA==}
-    engines: {node: '>=12'}
+  /magic-string@0.30.10:
+    resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
@@ -5677,7 +5676,7 @@ packages:
       execa: 8.0.1
       jsdom: 22.1.0
       local-pkg: 0.5.0
-      magic-string: 0.30.6
+      magic-string: 0.30.10
       pathe: 1.1.1
       picocolors: 1.0.0
       std-env: 3.5.0
